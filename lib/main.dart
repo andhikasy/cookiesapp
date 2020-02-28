@@ -20,11 +20,11 @@ class MyHomePage extends StatefulWidget {
     with SingleTickerProviderStateMixin {
   TabController _tabController;
 
-//  @override
-//  void initState() {
-//    super.initState();
-//    _tabController = TabController(length: 3, vsync: this);
-//  }
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 4, vsync: this);
+  }
 
 @override
 Widget build(BuildContext context) {
@@ -60,9 +60,46 @@ Widget build(BuildContext context) {
       style: TextStyle(
       fontFamily: 'Varela',
       fontSize: 42.0,
-      fontWeight: FontWeight.bold
-      ),
-      )
+      fontWeight: FontWeight.bold)),
+    SizedBox(height: 15.0),
+    TabBar(
+      controller: _tabController,
+      indicatorColor: Colors.transparent,
+      labelColor: Color(0xFFC88D67),
+      isScrollable: true,
+      labelPadding: EdgeInsets.only(left: 20.0, right: 20.0),
+      unselectedLabelColor: Color(0xFFCDCDCD),
+      tabs: <Widget>[
+        Tab(
+          child: Text('Cookies',
+          style: TextStyle(
+          fontFamily: 'Varela',
+          fontSize: 21.0,
+          )),
+        ),
+        Tab(
+          child: Text('Cookies Cake',
+          style: TextStyle(
+          fontFamily: 'Varela',
+          fontSize: 21.0,
+          )),
+        ),
+        Tab(
+          child: Text('Ice Cream',
+          style: TextStyle(
+          fontFamily: 'Varela',
+          fontSize: 21.0,
+          )),
+        ),
+        Tab(
+          child: Text('Snacks',
+          style: TextStyle(
+          fontFamily: 'Varela',
+          fontSize: 21.0,
+          )),
+        ),
+      ],
+    )
     ],
     ),
   );
