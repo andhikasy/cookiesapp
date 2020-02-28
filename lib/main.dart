@@ -38,7 +38,7 @@ Widget build(BuildContext context) {
       color: Color(0xFF545D68),
       onPressed: () {}
       ),
-      title: Text('Pickup',
+      title: Text('Logo Here',
         style: TextStyle(
         fontFamily: 'Varela',
         fontSize: 20.0,
@@ -51,7 +51,20 @@ Widget build(BuildContext context) {
           onPressed: () {} 
         ),
       ],  
-    )
+    ),
+    body: ListView(
+    padding: EdgeInsets.only(left: 20.0),
+    children: <Widget>[
+      SizedBox(height: 20.0),
+      Text('Categories',
+      style: TextStyle(
+      fontFamily: 'Varela',
+      fontSize: 42.0,
+      fontWeight: FontWeight.bold
+      ),
+      )
+    ],
+    ),
   );
 }
 }
