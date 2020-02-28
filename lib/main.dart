@@ -1,3 +1,5 @@
+import 'package:cookiesapp/bottom_bar.dart';
+import 'package:cookiesapp/cookie_page.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
@@ -69,8 +71,8 @@ Widget build(BuildContext context) {
       isScrollable: true,
       labelPadding: EdgeInsets.only(left: 20.0, right: 20.0),
       unselectedLabelColor: Color(0xFFCDCDCD),
-      tabs: <Widget>[
-        Tab(
+      tabs: [
+      Tab(
           child: Text('Cookies',
           style: TextStyle(
           fontFamily: 'Varela',
@@ -98,10 +100,28 @@ Widget build(BuildContext context) {
           fontSize: 21.0,
           )),
         ),
-      ],
-    )
+      ]),
+      Container(
+      height: MediaQuery.of(context).size.height - 50.0,
+      width: double.infinity,
+      child: TabBarView(
+      controller: _tabController,
+        children: [
+          CookiePage(),
+          CookiePage(),
+          CookiePage(),
+          CookiePage(),
+        ],
+      ),
+      )
     ],
     ),
+    floatingActionButton: FloatingActionButton(onPressed: () {},
+    backgroundColor: Color(0xFFF17532),
+    child: Icon(Icons.fastfood),
+    ),
+    floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+    bottomNavigationBar: BottomBar(),
   );
 }
 }
