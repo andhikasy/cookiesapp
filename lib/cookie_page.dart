@@ -37,7 +37,7 @@ class CookiePage extends StatelessWidget {
   
  Widget _buildCard(String name, String price, String imgPath, bool added, bool isFavorite, context){
   return Padding(
-  padding: EdgeInsets.only(top: 15.0, left: 5.0, right: 5.0, bottom: 5.0),
+  padding: EdgeInsets.only(top: 5.0, left: 5.0, right: 5.0, bottom: 5.0),
   child: InkWell(
     child: Container(
     decoration: BoxDecoration(
@@ -88,10 +88,40 @@ class CookiePage extends StatelessWidget {
         color: Color(0xFF575E67),
         fontFamily: 'Varela',
         fontSize: 14.0)),
-    //dari sini     
-  ],
-  ),
-  ),
-  ));
+    Padding(
+    padding: EdgeInsets.all(8.0),
+    child: Container(
+      color: Color(0xFFEBEBEB),
+      height: 1.0)),
+    Padding(padding: EdgeInsets.only(left: 5.0, right: 5.0),
+    child: Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+      if (!added) ...[
+        Icon(Icons.shopping_basket,
+          color: Color(0xFFD17E50),
+          size: 12.0),
+        Text('Add to Cart',
+          style: TextStyle(
+            fontFamily: 'Varela',
+            color: Color(0xFFD17E50),
+            fontSize: 12.0))  
+      ],
+      if (added) ...[
+        Icon(Icons.remove_circle_outline,
+        color: Color(0xFFD15E50),
+        size: 12.0),
+        Text('3',
+          style: TextStyle(
+          fontFamily: 'Varela',
+          color: Color(0xFFD17E50),
+          fontWeight: FontWeight.bold,
+          fontSize: 12.0)),
+        Icon(Icons.add_circle_outline,
+        color: Color(0xFFD17E50),
+        size: 12.0),  
+      ]
+      ])),  
+  ]))));
   }
 }
