@@ -60,7 +60,6 @@ class CookiePage extends StatelessWidget {
       children: [
         isFavorite ? Icon(Icons.favorite, color: Color(0xFFEF7532)):
         Icon(Icons.favorite_border, color: Color(0xFFEF7532))
-        
       ]
       )
     ),
